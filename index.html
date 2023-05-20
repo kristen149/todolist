@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="card__header">
+            <img src="./img/X2oObC4.png" />
+        </div>
+        <!-- <h2>hello!</h2> -->
+        <div class="card__body">
+            <div class="filter-btn">
+                <a id="one" href="#" onclick="showOnlyCompletedTasks()"><i class="fa fa-check-circle"></i></a>
+                <a id="two" href="#" onclick="sortASC()"><i class="fa fa-sort-alpha-down"></i></a>
+                <a id="three" href="#" onclick="sortDES()"><i class="fa fa-sort-alpha-up"></i></a>
+                <a id="all" href="#" onclick="showAll()"><i class="fa fa-angle-double-left"></i></a>
+                <span class="toggle-btn">
+                    <i class="fa fa-filter"></i>
+                    <i class="fa fa-times"></i>
+                </span>
+            </div>
+            <div class="card__content">
+                <div class="card__title">
+                    <h2>Welcome Back!</h2>
+                    <p><i class="fa fa-calendar-alt"></i> <span id="date"> </span></p>
+                    <button class="btn" onclick="SaveStorage()"><i class="fa fa-save"></i> Save Task</button>
+                    <button class="btn" onclick="GetStorage()"><i class="fa fa-copy"></i> Load Task</button>
+
+                </div>
+                <div class="card__add">
+                    <input id="newTask" type="text" placeholder="Enter an activity...">
+                    <button id="addItem">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+                <div class = "todo__list">
+                    <p>TO DO LIST</p>
+                </div>
+                <div class="card__todo">
+                    <!-- Uncompleted tasks -->
+                    <ul class="todo" id="todo"></ul>
+                    <!-- Completed tasks -->
+                    <ul class="todo" id="completed"></ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.toggle-btn').click(function () {
+                $('.filter-btn').toggleClass('open');
+
+            });
+
+            $('.filter-btn a').click(function () {
+                $('.filter-btn').removeClass('open');
+
+            });
+
+        });
+        // SET DATE -------------------------------
+
+        let date = new Date();
+     
+        options = {
+            year: 'numeric', month: 'long', day: 'numeric'
+        };
+        var fmt = new Intl.DateTimeFormat('en-US', options);
+        let displayDate = fmt.format(date);
+
+        document.getElementById("date").innerHTML = displayDate;
+
+        // --------------------------------------
+    </script>
+
+
+    <!-- MAIN JS -->
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+
+</html>
+
