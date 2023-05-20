@@ -6,4 +6,4 @@ Creating your own To-do list right now！
 
 <p>Demo: </p>
 
-![image](https://github.com/kristen149/todolist/assets/100759917/a85f203c-6f41-4e35-babe-cb1cbcafe6fe)
+![image](https://github.com/kristen149/todolist/assets/100759917/05813901-15ab-4038-bbae-29ca0e263be3)
